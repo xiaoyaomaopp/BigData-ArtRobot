@@ -38,7 +38,7 @@ var extractor = {
         console.log(id)
         var title = $("#blq-content h1").html();
 
-        var location = $("#blq-content .row #explore .shadowed-box-mid dl span").html();
+        var location = $($("#blq-content .row #explore .shadowed-box-mid dl").children()[5]).find("span").html();
         console.log(location)
         var description = $("#blq-content .content .object-description").html()
     }
