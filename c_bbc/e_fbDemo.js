@@ -6,7 +6,8 @@ var extractor = {
     //表名
     name: 'bbc.histroy',//板块
     //  网页是否由它处理的依据，如匹配区域网址 http[s]://shanghai.anjuke.com/market[/]...
-    target: /^http:\/\/www\.bbc\.co\.uk\/ahistoryoftheworld\/objects/g,
+    target: /^http:\/\/www\.bbc\.co\.uk\/ahistoryoftheworld\/objects\/CkcC4hEsTa\-alS5gtLG3vg/,
+    //target: /^http:\/\/www\.bbc\.co\.uk\/ahistoryoftheworld\/objects/g,
     //target: /^http:\/\/shanghai\.anjuke\.com\/market\/$/i,
     //正则，加入爬取队列，只为寻找target
     //helpUrl:/^http:\/\/www\.datayuan\.cn/g,
@@ -35,12 +36,29 @@ var extractor = {
     handler: function ($, queueItem, responseBuffer, response) {
         var idArr =queueItem.url.split("/");
         var id = idArr[idArr.length-1];
-        console.log(id)
-        var title = $("#blq-content h1").html();
+        console.log('id'+id)
 
-        var location = $($("#blq-content .row #explore .shadowed-box-mid dl").children()[5]).find("span").html();
-        console.log(location)
+        var title = $("#blq-content h1").html();
+        if(!!title) title = title.replace('\n','');
+        console.log('title'+title);
+        var location = $($("#blq-content .row #explore .shadowed-box-mid dl").children()[1]).find("span").html();
+        console.log('location'+location)
         var description = $("#blq-content .content .object-description").html()
+        console.log('description'+description)
+        console.log($($("#blq-content .row #explore .shadowed-box-mid dl").children()[1]).find("span").html());
+        console.log($($("#blq-content .row #explore .shadowed-box-mid dl").children()[1]).find("span").html());
+        console.log($($($("#blq-content .row #explore .shadowed-box-mid dl").children()[1]).find("a").children()[1]).find("span").html());
+        console.log($($("#blq-content .row #explore .shadowed-box-mid dl").children()[2]).find("span").html());
+        console.log($($("#blq-content .row #explore .shadowed-box-mid dl").children()[3]).find("span").html());
+        console.log($($("#blq-content .row #explore .shadowed-box-mid dl").children()[4]).find("span").html());
+        console.log($($("#blq-content .row #explore .shadowed-box-mid dl").children()[5]).find("span").html());
+        console.log($($("#blq-content .row #explore .shadowed-box-mid dl").children()[6]).find("span").html());
+        console.log($($("#blq-content .row #explore .shadowed-box-mid dl").children()[7]).find("span").html());
+        console.log($($("#blq-content .row #explore .shadowed-box-mid dl").children()[8]).find("span").html());
+        console.log($($("#blq-content .row #explore .shadowed-box-mid dl").children()[9]).find("span").html());
+        console.log($($("#blq-content .row #explore .shadowed-box-mid dl").children()[10]).find("span").html());
+        console.log($($("#blq-content .row #explore .shadowed-box-mid dl").children()[11]).find("span").html());
+        console.log($($("#blq-content .row #explore .shadowed-box-mid dl").children()[12]).find("span").html());
     }
 }
 

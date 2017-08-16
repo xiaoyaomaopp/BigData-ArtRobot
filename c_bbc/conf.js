@@ -9,7 +9,8 @@ var conf = {
     logLevel: 'debug',//debug|info|warn|error
     dbUrl: "mongodb://10.82.0.1/crawlerNew",//'mongodb://user:pass@localhost:port,anotherhost:port,yetanother:port/mydatabase'
     crawler: {
-        url: "http://www.bbc.co.uk/ahistoryoftheworld/exploreraltflash/",
+        url: "http://www.bbc.co.uk/ahistoryoftheworld/objects/CkcC4hEsTa-alS5gtLG3vg",
+        //url: "http://www.bbc.co.uk/ahistoryoftheworld/exploreraltflash/",
         interval: 3 * 1000
     },
     extractors: [
